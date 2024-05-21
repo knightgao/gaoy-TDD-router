@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Router Navigation Example</title>
+  <script src="router.js"></script>
+</head>
+<body>
+<h1>Router Navigation Example</h1>
+<button id="home-btn">首页</button>
+<button id="about-btn">关于</button>
+<button id="not-found-btn">404页面</button>
+
+<script>
+  // 初始化路由器
+  const router = new Router({
+    mode: 'history', // 使用 history 模式
+    currentUrl: '/' // 设置初始URL为首页
+  });
+
+  // 绑定按钮点击事件到路由导航
+  document.getElementById('home-btn').addEventListener('click', () => {
+    router.navigate('/');
+  });
+
+  document.getElementById('about-btn').addEventListener('click', () => {
+    router.navigate('/about');
+  });
+
+  document.getElementById('not-found-btn').addEventListener('click', () => {
+    router.navigate('/non-route'); // 故意导航到一个不存在的路由
+  });
+</script>
+</body>
+</html>
